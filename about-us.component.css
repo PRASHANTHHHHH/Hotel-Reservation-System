@@ -1,0 +1,176 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    
+}
+.heading
+{
+    height: 70vh;
+
+}
+.wholePage
+{
+    height: 100%;
+	width: 100%;
+
+	background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(abc.jpg);
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+} 
+
+    
+
+.navbar
+{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-top: 50px;
+}
+nav
+{
+    flex: 1;
+    text-align: right;
+}
+nav ul 
+{
+    display: inline-block;
+    list-style: none;
+}
+nav ul li
+{
+    display: inline-block;
+    margin: 0 20px;
+}
+nav ul li a
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    font-family: sans-serif;
+}
+
+
+.navbar ul li::after{ height: 3px; 
+	content: '';
+	width: 0; 
+	background: #009688; 
+	position: absolute; 
+	bottom: -10px; 
+	transition: 0.5s;
+	left: 0;
+
+} .navbar ul li:hover::after{ 
+	width: 100%;
+
+}
+nav ul li button
+{
+    font-size: 20px;
+    color: white;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+nav ul li button:hover
+{
+    color: aqua;
+}
+nav ul li a:hover
+{
+    color: aqua;
+}
+a
+{
+    text-decoration: none;
+    color: palevioletred;
+    font-size: 28px;
+}
+
+.row{
+    max-width: 1180px;
+    margin: 0 auto 1px;
+}
+.logo{
+    height: 80px;
+    width: auto;
+    /* float: left; */
+    margin-top: 15px;
+}
+.main-nav{
+    float: right;
+    margin-top: 50px;
+}
+.main-nav li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 40px;
+}
+.main-nav li a{
+    padding: 5px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 200px;
+    font-size: 90%;
+}
+.main-nav li a:hover
+{
+    border-bottom: 5px solid #bf55ec;
+}
+
+.welcome-msg
+{
+    position: relative;
+    text-align: center;
+    font-family: 'Flamenco', cursive;
+    color: #000;
+    top: 50%;
+    background-color: rgba(245, 245, 245, 0.63); 
+    border: 2px solid black;
+    margin: 30px;
+    opacity: 1s;
+    border-radius: 25px; 
+    
+}
+.welcome-msg h1
+{
+    font-size: 2em;
+    font-weight: 100;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+.welcome-msg p
+{
+    font-size: 1em;
+    font-weight: 1em;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    margin: 20px;
+    
+
+}
+.btn
+{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    margin: 5px;
+    padding: 7px 22px;
+    text-decoration: none;
+    border: 1px solid coral;
+   
+}
+.btn-subscribe
+{
+    background: coral;
+}
+.btn-comment:hover{
+    background:  coral;
+    transition: .5s;
+}

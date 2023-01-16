@@ -1,0 +1,66 @@
+
+
+
+<div class="full-page">
+    <div class="navbar">
+      <div>
+          <a href='website.html'>BookMyRooms</a>
+      </div>
+      <nav>
+          <ul id='MenuItems'>
+            <li><a (click)="navigate('/homepage')">Home</a></li>
+            <li><a (click)="navigate('/aboutus')">About Us</a></li>
+            <li><a (click)="navigate('/register')">Book Now</a></li>
+            <li><a (click)="navigate('/roomlist')">Room List</a></li>
+            <li><a (click)="navigate('/signup')">Sign Up</a></li>
+          </ul>
+      </nav>
+      </div>
+<div class="content">
+    <div class="card text-center">
+        <div class="card-header">
+          <h3 class="mt-2"> Check Out</h3>
+        </div>
+        <div class="card-body">
+
+          <div class="d-flex flex-row mt-3" >
+            <p class="rightlable">Hotel Name</p>
+            <p class="leftlable">Room NO</p>
+            </div>
+            <div class="d-flex flex-row mt-2">
+            <input type="text" style="width:200px; height:40px; margin-left:20px;" class="form-control" [(ngModel)]="hotelname" >
+            <input type="text" style="width:200px; margin-left:150px"class="form-control" [(ngModel)]="roomno">
+  
+        </div>
+
+        <button type="button" class="btn btn-secondary mt-4"(click)="checkout()">SUBMIT</button>
+        
+      </div>
+</div>
+<ng-template #SuccessModal let-modal>
+
+  <div class="modal-dialog-scrollable" id="success_tic" role="document">
+    <div class="modal-content">
+     
+      <div class="modal-content">
+          <button type="button" class="close" (click)="modal.close('close click')" aria-label="Close"> <span aria-hidden="true">&times;</span>
+          </button>
+        <div class="page-body">
+      <div class="head">  
+        <h3 style="margin-top:5px;">Room Checked Out Succesfully</h3>
+    
+      </div>
+  
+    <h1 style="text-align:center;"><div class="checkmark-circle">
+    <div class="background"></div>
+    <div class="checkmark draw"></div>
+  </div></h1>
+  
+    </div>
+  </div>
+    </div>
+  </div>
+  
+</ng-template>
+
+  </div>

@@ -1,0 +1,162 @@
+
+
+
+
+
+
+
+<div class="wholePage">
+  <div class="navbar">
+    <div>
+        <a href='website.html'>BookMyRooms</a>
+    </div>
+    <nav>
+        <ul id='MenuItems'>
+          <li><a (click)="navigate('/homepage')">Home</a></li>
+          <li><a (click)="navigate('/aboutus')">About Us</a></li>
+          <li><a (click)="navigate('/register')">Book Now</a></li>
+          <li><a (click)="navigate('/roomlist')">Room List</a></li>
+          <li><a (click)="navigate('/signup')">Sign Up</a></li>
+        </ul>
+    </nav>
+</div>
+	<div class="formUserInput">
+        <div class="card text-center">
+            <div class="card-header">
+            <span class="header mt-5">ROOM BOOKING FORM</span> 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mt-3"></h5>
+              <div class="mt-3">
+                <div class="d-flex flex-row">
+                    <p class="rightlable">First Name</p>
+                    <p class="leftlable">Last name</p>
+                    </div>
+                    <div class="d-flex flex-row">
+                    <img src="./assets/icons8-user-48.png" style="height:40px;width:40px" class="mx-2">
+                    <input type="text" style="width:300px;margin-right: 40px;" class="form-control"  [(ngModel)]="firstname" placeholder="First name">
+
+                    <img src="./assets/icons8-user-48.png"style="height:40px;width:40px"class="mx-2"> 
+                    <input type="text" style="width:300px;"class="form-control" [(ngModel)]="lastname" placeholder="Last name">
+
+                </div>
+                <div class="d-flex flex-row mt-4">
+                    <p class="rightlable">Phone Number</p>
+                    <p class="leftlable"style="margin-left:285px">Email</p>
+                    </div>
+                    <div class="d-flex flex-row">
+
+                    <img src="./assets/icons8-phone-50.png" style="height:35px;width:35px" class="mx-2">
+                    <input type="number" style="width:300px;margin-right: 40px;"class="form-control" [(ngModel)]="phoneNumber" placeholder="Phone number">
+
+                    <img src="./assets/icons8-mail-account-24.png"style="height:35px;width:35px" class="mx-3">
+                     <input type="mail" style="width:300px;"class="form-control" [(ngModel)]="email" placeholder="Mail">
+                 </div>
+                 <div class="d-flex flex-row mt-4">
+                    <p class="rightlable">Departure Date</p>
+                    <p class="leftlable"style="margin-left:285px">Arrival Date</p>
+                    </div>
+                    <div class="d-flex flex-row">
+
+                    <img src="./assets/icons8-calendar-50.png" style="height:30px;width:33px" class="mx-2">
+                    <input type="date" style="width:300px;margin-right: 40px;"class="form-control" [(ngModel)]="depatureDate" placeholder="Departure Date">
+
+                    <img src="./assets/icons8-calendar-50.png"style="height:33px;width:33px" class="mx-3"> 
+                    <input type="date" style="width:300px;"class="form-control"[(ngModel)]="ArrivalDate" placeholder="Arrival Date">
+                 </div>
+                 <div class="d-flex flex-row mt-4">
+                    <p style="margin-left:60px;font-weight: bold;">Location</p>
+                    <p  style="margin-left:190px;font-weight: bold;">Hotel Name</p>
+                    <p  style="margin-left:150px;font-weight: bold;">Room</p>
+
+                    </div>
+                    <div class="d-flex flex-row">
+                 <img src="./assets/icons8-map-pin-30.png" style="height:30px;width:33px" class="mx-2">
+                 <select class="form-control" style="width:200px" (change)="selectlocChange($event)"> <option>Choose Location</option> 
+                    <option *ngFor="let i of locationDataType">{{i}}</option> </select>
+
+                    <img src="./assets/icons8-5-star-hotel-32.png" style="height:30px;width:33px;margin-left:400px" class="mx-2">
+                 <select class="form-control" style="width:200px" (change)="selectHotelChange($event)"> <option>Select the hotel</option> 
+                    <option *ngFor="let i of actualHotelList">{{i}}</option> </select>
+                    <img src="./assets/icons8-5-star-hotel-32.png" style="height:30px;width:33px;margin-left:400px" class="mx-2">
+                    <select class="form-control" style="width:200px"(change)="selectRoomChange($event)"> <option>Select the hotel</option> 
+                       <option *ngFor="let i of roomList">{{i.roomName}}</option> </select>
+                    </div>
+                    <button type="button" class="btn   btn-danger btn-lg mt-5"(click)="reset()">Reset</button>
+
+                    <button type="button" class="btn   btn-danger btn-lg mt-5 mx-5" (click)="bookNow('mymodal')">Book Now</button>
+
+
+              </div>
+            </div>
+            <div class="card-footer text-muted">
+         
+            </div>
+          </div>
+    		
+   </div>
+   <ng-template #mymodal let-modal>
+      <div class="modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Make a Payment</h5>
+            <button type="button" class="close" (click)="modal.close('close click')" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-row" >
+            <label class="modalleft"style="font-weight: bold">Name</label>
+            <label style="margin-left:175px;font-weight: bold">Phone No</label></div>
+            <div class="d-flex flex-row">
+            <input type="email" class="form-control mt-2 leftinput" [(ngModel)]="userName" [disabled]="true">
+            <input type="email" class="form-control mt-2  mx-3 leftinput"  [(ngModel)]="phoneNumber" [disabled]="true"></div>
+            <div class="d-flex flex-row">
+              <label class="modalleft"style="font-weight: bold" >Depature Date</label>
+              <label style="margin-left:110px;font-weight: bold">Arrival Date</label></div>
+              <div class="d-flex flex-row">
+              <input type="email" class="form-control mt-2 leftinput" [(ngModel)]="depatureDate"  [disabled]="true">
+              <input type="email" class="form-control mt-2  mx-3 leftinput" [(ngModel)]="ArrivalDate"  [disabled]="true"></div>
+              <div class="d-flex flex-row">
+                <label class="modalleft" style="font-weight: bold">Number of Person</label>
+                <label style="margin-left:85px;font-weight: bold">Amount</label></div>
+                <div class="d-flex flex-row">
+                <input type="email" class="form-control mt-2 leftinput" [(ngModel)]="roomDetails[0].noperson" [disabled]="true">
+                <input type="email" class="form-control mt-2  mx-3 leftinput"  [(ngModel)]="roomDetails[0].amtPerson" [disabled]="true"></div>
+                <label class="modalleft" style="margin-left:160px;font-weight: bold">Enter Amount</label>  <input type="number" [(ngModel)]="amount"class="form-control mt-2 leftinput" style="margin-left:120px">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="makepayment()">Book</button>
+            <button type="button" class="btn btn-secondary" (click)="modal.close('close click')">Close</button>
+          </div>
+        </div>
+      </div>
+  </ng-template>
+
+  <ng-template #SuccessModal let-modal>
+
+    <div class="modal-dialog-scrollable" id="success_tic" role="document">
+      <div class="modal-content">
+       
+        <div class="modal-content">
+            <button type="button" class="close" (click)="modal.close('close click')" aria-label="Close"> <span aria-hidden="true">&times;</span>
+            </button>
+          <div class="page-body">
+        <div class="head">  
+          <h3 style="margin-top:5px;">Room Booked Successfully</h3>
+      
+        </div>
+    
+      <h1 style="text-align:center;"><div class="checkmark-circle">
+      <div class="background"></div>
+      <div class="checkmark draw"></div>
+    </div></h1>
+    
+      </div>
+    </div>
+      </div>
+    </div>
+    
+  </ng-template>
+</div>

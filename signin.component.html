@@ -1,0 +1,39 @@
+<div class="wholePage">
+    <div class="navbar">
+      <div>
+          <a href='website.html'>BookMyRooms</a>
+      </div>
+      <nav>
+          <ul id='MenuItems'>
+            <li><a (click)="navigate('/signup')">Sign Up</a></li>
+          </ul>
+      </nav>
+  </div>
+      <div class="formUserInput">
+          <div class="card text-center">
+              <div class="card-header">
+              <span class="header mt-5">SIGN IN</span> 
+              </div>
+              <div class="card-body">
+                <div class="d-flex flex-row mt-2">
+                
+                  <p class="rightlable">Email</p>
+                  </div>
+                <div class="mt-1 d-flex flex-row mx-5">
+                  <img src="./assets/icons8-mail-account-24.png"style="height:35px;width:35px" class="mx-3">
+                       <input type="mail" style="width:300px;"class="form-control" [(ngModel)]="emailid" placeholder="E-Mail">
+              </div>
+              <div class="d-flex flex-row mt-2">
+                
+                <p class="rightlable">Password</p>
+                </div>
+              <div class="mt-1 d-flex flex-row mx-5">
+                <img src="./assets/padlock.png" style="height:40px;width:40px" class="mx-3">
+                     <input type="mail" style="width:300px;"class="form-control" [(ngModel)]="pswd" placeholder="password">
+            </div>
+              <div class="card-footer text-muted mt-4">
+                <button type="button" class="btn btn-danger" (click)="signIn()">Sign-In</button>
+              </div>
+            </div>
+              
+     </div>

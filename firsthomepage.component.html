@@ -1,0 +1,35 @@
+<div class="full-page">
+  <div class="navbar">
+      <div>
+          <a href='website.html'>BookMyRooms</a>
+      </div>
+      <nav>
+          <ul id='MenuItems'>
+              <li><a (click)="navigate('/homepage')">Home</a></li>
+              <li><a (click)="navigate('/aboutus')">About Us</a></li>
+              <li><a (click)="navigate('/register')">Book Now</a></li>
+              <li><a (click)="navigate('/roomlist')">Room List</a></li>
+              <li><a (click)="navigate('/signin')">Sign Out</a></li>
+          </ul>
+      </nav>
+  </div>
+    <div class="content">
+
+        <h1>BOOK YOUR ROOMS</h1>
+        
+        <p>A very warm welcome to BookMyRooms. It is indeed a pleasure to have you staying with us.
+            The Management and staff are pleased to be your hosts.
+             I look forward to demonstrating services and skills distinctive and special to BookMyRooms, which is fully equipped with fine dining and business facilities to cater to our guests.
+
+        </p>
+        <div>
+            <button type="button"(click)="navigate('/register')"> 
+                <span></span> REGISTER NOW
+            </button>
+            <button type="button" (click)="navigate('/checkout')">
+               <span></span> CHECK OUT
+            </button>
+        </div>
+        </div>
+</div>
+

@@ -1,0 +1,48 @@
+<div class="full-page">
+    <div class="navbar">
+        <div>
+            <a href='website.html'>BookMyRooms</a>
+        </div>
+        <nav>
+            <ul id='MenuItems'>
+                <li><a (click)="navigate('/homepage')">Home</a></li>
+                <li><a (click)="navigate('/aboutus')">About Us</a></li>
+                <li><a (click)="navigate('/register')">Book Now</a></li>
+                <li><a (click)="navigate('/roomlist')">Room List</a></li>
+                <li><a (click)="navigate('/signin')">Sign Out</a></li>
+            </ul>
+        </nav>
+    </div>
+      <div class="content">
+        <div class="card mt-2"  >
+            <div class="card-body"><table class="table" >
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">RoomNO</th>
+                    <th scope="col">Hotel Name</th>
+                    <th scope="col">Room ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">From Date</th>
+                    <th scope="col">End Date</th>
+                    <th scope="col">No of Persons</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let room of roomList;let i=index;">
+                    <th scope="row">{{++i}}</th>
+                    <td>{{room.roomno}}</td>
+                    <td>{{room.hname}}</td>
+                    <td>{{room.rid}}</td>
+                    <td>{{room.name}}</td>
+                    <td>{{room.fromdate}}</td>
+                    <td>{{room.enddate}}</td>
+                    <td>{{room.noofperson}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+  </div>
+  
+  
